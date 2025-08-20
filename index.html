@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAY 1 - HTML PRACTICE</title>
+  </head>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: #dadada;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .login-form {
+      width: 250px;
+      margin: auto;
+    }
+
+    .login-btn:hover {
+      background: rgb(172, 172, 168);
+    }
+  </style>
+  <body>
+    <div class="main">
+      <form class="login-form" id="loginForm">
+        <h1>Login</h1>
+        <div>
+          <label for="username">Username</label>
+          <input type="text" id="username" />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" />
+        </div>
+        <div>
+          <button class="login-btn" type="submit">Login</button>
+        </div>
+        <p id="result"></p>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          if (username === "jasmin" && password === "practice") {
+            document.getElementById("result").textContent =
+              "✅ Login successful! Welcome Jasmin!";
+            document.getElementById("result").style.color = "green";
+          } else {
+            document.getElementById("result").textContent =
+              "❌ Invalid username or password";
+            document.getElementById("result").style.color = "red";
+          }
+        });
+    </script>
+  </body>
+</html>
