@@ -58,13 +58,12 @@
           const username = document.getElementById("username").value;
           const password = document.getElementById("password").value;
 
-          if (username === "jasmin" && password === "practice") {
-            document.getElementById("result").textContent =
-              "✅ Login successful! Welcome Jasmin!";
+          if (username === "Jasmin" && password === "practice") {
+            document.getElementById("result").textContent = "Welcome, Jasmin!";
             document.getElementById("result").style.color = "green";
           } else {
             document.getElementById("result").textContent =
-              "❌ Invalid username or password";
+              "Wrong Credentials!";
             document.getElementById("result").style.color = "red";
           }
         });
