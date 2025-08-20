@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: #dadada;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .login-form {
+      width: 250px;
+      margin: auto;
+    }
+
+    .passInput {
+      margin-left: 4px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <body>
+    <div class="main">
+      <form class="login-form" id="loginForm">
+        <h1>Login</h1>
+        <div>
+          <label for="username">Username</label>
+          <input type="text" id="username" />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input class="passInput" type="password" id="password" />
+        </div>
+        <div>
+          <button class="btnLogin" type="submit">Login</button>
+        </div>
+        <p id="result"></p>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const user = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          if (user === "" || password === "") {
+            document.getElementById("result").textContent =
+              "Username or Password can't be empty";
+          } else {
+            if (user === "Jasmin" && password === "practice") {
+              document.getElementById("result").textContent =
+                "Login Successful!";
+            } else {
+              document.getElementById("result").textContent =
+                "Wrong Credentials, Sorry!";
+            }
+          }
+        });
+    </script>
+  </body>
+</html>
