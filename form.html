@@ -65,7 +65,10 @@
             document.getElementById("result").textContent =
               "Username or Password can't be empty";
           } else {
-            if (user === "Jasmin" && password === "practice") {
+            if (
+              user === "Jasmin" ||
+              (user === "jasmin" && password === "practice")
+            ) {
               document.getElementById("result").textContent =
                 "Login Successful!";
             } else {
