@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>formPractice</title>
+  </head>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <form class="login-form" id="loginForm">
+        <h1>Login</h1>
+        <div class="user">
+          <label for="username">Username</label>
+          <input type="text" id="username" />
+        </div>
+        <div class="password">
+          <label for="password">Password</label>
+          <input type="password" id="password" />
+        </div>
+        <div class="btn">
+          <button type="submit">Login</button>
+        </div>
+        <p id="result"></p>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const user = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          if (user === "jasmin" && password === "hey") {
+            document.getElementById("result").textContent = "hey, Jasmin!";
+          } else {
+            document.getElementById("result").textContent =
+              "Sorry, Who are you?";
+          }
+        });
+    </script>
+  </body>
+</html>
